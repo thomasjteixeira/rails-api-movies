@@ -1,0 +1,63 @@
+{
+  "adult": false,
+  "backdrop_path": "/xOMo8BRK7PfcJv9JCnx7s5hj0PX.jpg",
+  "belongs_to_collection": {
+    "id": 726871,
+    "name": "Saga 'Duna'",
+    "poster_path": "/pwfM8PNmjS4CIes7gcrmdUoTMeN.jpg",
+    "backdrop_path": "/ygVSGv86R0BTOKJIb8RQ1sFxs4q.jpg"
+  },
+  "budget": 190000000,
+  "genres": [
+    {
+      "id": 28,
+      "name": "Ação"
+    },
+    {
+      "id": 12,
+      "name": "Aventura"
+    },
+    {
+      "id": 878,
+      "name": "Ficção científica"
+    }
+  ],
+  "homepage": "",
+  "id": 693134,
+  "imdb_id": "tt15239678",
+  "original_language": "en",
+  "original_title": "Dune: Part Two",
+  "overview": "A jornada de Paul Atreides continua. Ele se une a Chani e aos Fremen em uma guerra de vingança contra aqueles que destruíram sua família. Diante de uma escolha entre o amor de sua vida e o destino do universo, Paul tenta evitar um futuro terrível que só ele pode prever.",
+  "popularity": 1380.555,
+  "poster_path": "/opifTi4YVvqMJkDpMCi2mjwE77B.jpg",
+  "production_companies": [
+    {
+      "id": 923,
+      "logo_path": "/8M99Dkt23MjQMTTWukq4m5XsEuo.png",
+      "name": "Legendary Pictures",
+      "origin_country": "US"
+    }
+  ],
+  "production_countries": [
+    {
+      "iso_3166_1": "US",
+      "name": "United States of America"
+    }
+  ],
+  "release_date": "2024-02-27",
+  "revenue": 182525391,
+  "runtime": 166,
+  "spoken_languages": [
+    {
+      "english_name": "English",
+      "iso_639_1": "en",
+      "name": "English"
+    }
+  ],
+  "status": "Released",
+  "tagline": "Vida longa aos lutadores.",
+  "title": "Duna: Parte Dois",
+  "video": false,
+  "vote_average": 8.5,
+  "vote_count": 967
+}

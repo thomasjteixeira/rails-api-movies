@@ -1,0 +1,57 @@
+{
+  "adult": false,
+  "backdrop_path": "/4qCqAdHcNKeAHcK8tJ8wNJZa9cx.jpg",
+  "budget": 11000000,
+  "genres": [
+    {
+      "id": 12,
+      "name": "Aventura"
+    },
+    {
+      "id": 28,
+      "name": "Ação"
+    },
+    {
+      "id": 878,
+      "name": "Ficção científica"
+    }
+  ],
+  "homepage": "https://www.starwars.com/films/star-wars-episode-iv-a-new-hope",
+  "id": 11,
+  "imdb_id": "tt0076759",
+  "original_language": "en",
+  "original_title": "Star Wars",
+  "overview": "A princesa Leia é mantida refém pelas forças imperiais comandadas por Darth Vader. Luke Skywalker e Han Solo precisam libertá-la e restaurar a liberdade e a justiça na galáxia.",
+  "popularity": 95.041,
+  "poster_path": "/lesQwNHiSdauuo1xrtLP8uBUlIu.jpg",
+  "production_companies": [
+    {
+      "id": 1,
+      "logo_path": "/tlVSws0RvvtPBwViUyOFAO0vcQS.png",
+      "name": "Lucasfilm Ltd.",
+      "origin_country": "US"
+    },
+    {
+      "id": 25,
+      "logo_path": "/qZCc1lty5FzX30aOCVRBLzaVmcp.png",
+      "name": "20th Century Fox",
+      "origin_country": "US"
+    }
+  ],  
+  "release_date": "1977-05-25",
+  "revenue": 775398007,
+  "runtime": 121,
+  "spoken_languages": [
+    {
+      "english_name": "English",
+      "iso_639_1": "en",
+      "name": "English"
+    }
+  ],
+  "status": "Released",
+  "tagline": "Que a força esteja com você!",
+  "title": "Guerra nas Estrelas",
+  "video": false,
+  "vote_average": 8.204,
+  "vote_count": 19745
+}
