@@ -11,6 +11,7 @@ gem 'puma', '>= 5.0'
 gem 'sprockets-rails'
 gem 'sqlite3', '~> 1.4'
 gem 'stimulus-rails'
+gem 'themoviedb-api'
 gem 'turbo-rails'
 
 # Use Redis adapter to run Action Cable in production
@@ -34,6 +35,7 @@ gem 'bootsnap', require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[mri windows]
+  gem 'pry-rails'
 end
 
 group :development do
