@@ -10,10 +10,42 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_02_09_222306) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_08_142359) do
+  create_table "gneres", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "movies", force: :cascade do |t|
     t.string "title"
     t.string "director"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "adult"
+    t.string "backdrop_path"
+    t.integer "budget"
+    t.string "homepage"
+    t.string "imdb_id"
+    t.string "original_language"
+    t.string "original_title"
+    t.text "overview"
+    t.float "popularity"
+    t.string "poster_path"
+    t.date "release_date"
+    t.integer "revenue"
+    t.integer "runtime"
+    t.string "status"
+    t.string "tagline"
+    t.boolean "video"
+    t.float "vote_average"
+    t.integer "vote_count"
+  end
+
+  create_table "production_companies", force: :cascade do |t|
+    t.string "name"
+    t.string "logo_path"
+    t.string "origin_country"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

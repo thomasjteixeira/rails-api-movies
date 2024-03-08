@@ -1,0 +1,2 @@
+class Gnere < ApplicationRecord
+end
