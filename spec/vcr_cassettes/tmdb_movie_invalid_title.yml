@@ -1,0 +1,64 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.themoviedb.org/3/search/movie?api_key=<TMDB_API_KEY>&language=pt-BR&query=invalid%20Movie%20title
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.1.4p223
+      Content-Type:
+      - application/json; charset=utf-8
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - api.themoviedb.org
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Sat, 09 Mar 2024 15:15:30 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=27314
+      X-Memc:
+      - MISS, STORE
+      X-Memc-Key:
+      - 2cf9f993816f98b74c28f4f749a91064
+      X-Memc-Age:
+      - '0'
+      X-Memc-Expires:
+      - '27314'
+      Etag:
+      - W/"0e23279b004381f72a34159d5c7dfd1f"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 d0aae99772e59e24f7411cf3903368b0.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - FOR50-P2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - CRjaipyHOG56xNkbCTmllah_0shOmyJrv4V4Pqzf6uZ5aFQiSTFZLg==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"page":1,"results":[],"total_pages":1,"total_results":0}'
+  recorded_at: Sat, 09 Mar 2024 15:15:30 GMT
+recorded_with: VCR 6.2.0
