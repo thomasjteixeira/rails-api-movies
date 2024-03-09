@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_08_142359) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_09_152515) do
   create_table "gneres", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -40,6 +40,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_08_142359) do
     t.boolean "video"
     t.float "vote_average"
     t.integer "vote_count"
+    t.index ["created_at"], name: "index_movies_on_created_at"
   end
 
   create_table "production_companies", force: :cascade do |t|
