@@ -5,7 +5,9 @@ Rails.application.routes.draw do
     collection { post :import_movies }
   end
 
-  resources :user_movies, only: %i[create update]
+  resources :user_movies, only: %i[create update] do
+    collection { post :import_movie_scores }
+  end
 
   get '/login', to: 'sessions#new'
   delete '/logout', to: 'sessions#destroy'
