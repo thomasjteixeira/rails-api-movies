@@ -1,4 +1,4 @@
-require 'csv'
+#frozen_string_literal: true
 
 class MoviesController < ApplicationController
   before_action :authenticate_user!
@@ -25,9 +25,7 @@ class MoviesController < ApplicationController
   end
 
   def import_movies
-    CSV.foreach(params[:file].path, headers: true) do |row|
-      MovieImporter.import_movie_tmdb(id: row['id'].to_s, title: row['title'])
-    end
+    MovieImporterWorker.perform_async(params[:file].path)
     render json: { message: 'Movies imported successfully.' }, status: :ok
   rescue StandardError => e
     render json: { message: "Error importing movies: #{e.message}" }, status: :unprocessable_entity

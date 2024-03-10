@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe 'Movies', type: :request do
@@ -18,9 +19,13 @@ RSpec.describe 'Movies', type: :request do
 
       context 'when the file is processed successfully' do
         it 'imports the movies and return a success message' do
+          num_movies_to_import = File.readlines(file.path).size - 1
+
           VCR.use_cassette('movies_import') do
-            post '/movies/import_movies', params: { file: }
+            expect { post '/movies/import_movies', params: { file: } }
+              .to change { Movie.count }.by(num_movies_to_import)
           end
+
           expect(response).to have_http_status(:ok)
           expect(JSON.parse(response.body)['message']).to eq('Movies imported successfully.')
         end
