@@ -5,6 +5,9 @@ require_relative '../config/environment'
 abort('The Rails environment is running in production mode!') if Rails.env.production?
 require 'rspec/rails'
 require 'vcr'
+require 'sidekiq/testing'
+
+Sidekiq::Testing.inline!
 
 Dir[Rails.root.join('spec', 'shared_examples', '**', '*.rb')].each { |f| require f }
 
