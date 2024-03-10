@@ -27,7 +27,10 @@ RSpec.describe 'UserMovies', type: :request do
 
       context 'when the file is processed successfully' do
         it 'imports the movies scores and return a success message' do
-          post '/user_movies/import_movie_scores', params: { file: }
+          num_movie_score_to_import = File.readlines(file.path).size - 1
+
+          expect { post '/user_movies/import_movie_scores', params: { file: } }
+            .to change { UserMovie.count }.by(num_movie_score_to_import)
 
           expect(response).to have_http_status(:ok)
           expect(JSON.parse(response.body)['message']).to eq('Movies scores imported successfully.')

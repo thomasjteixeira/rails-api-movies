@@ -18,10 +18,7 @@ class UserMoviesController < ApplicationController
   end
 
   def import_movie_scores
-    CSV.foreach(params[:file].path, headers: true) do |row|
-      MovieScoresImporter.import_movie_scores(movie_id: row['movie_id'].to_s, user_id: row['user_id'].to_s,
-                                              score: row['score'])
-    end
+    MovieScoresImporterWorker.perform_async(params[:file].path)
     render json: { message: 'Movies scores imported successfully.' }, status: :ok
   rescue StandardError => e
     render json: { message: "Error importing scores: #{e.message}" }, status: :unprocessable_entity
