@@ -1,3 +1,5 @@
+require 'csv'
+
 class MoviesController < ApplicationController
   before_action :authenticate_user!
 
@@ -16,10 +18,19 @@ class MoviesController < ApplicationController
   def create
     @movie = Movie.new(movie_params)
     if @movie.save
-      redirect_to movies_path, notice: "Movie was successfully created."
+      redirect_to movies_path, notice: 'Movie was successfully created.'
     else
       render :new
     end
+  end
+
+  def import_movies
+    CSV.foreach(params[:file].path, headers: true) do |row|
+      MovieImporter.import_movie_tmdb(id: row['id'].to_s, title: row['title'])
+    end
+    render json: { message: 'Movies imported successfully.' }, status: :ok
+  rescue StandardError => e
+    render json: { message: "Error importing movies: #{e.message}" }, status: :unprocessable_entity
   end
 
   private
