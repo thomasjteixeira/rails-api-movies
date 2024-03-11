@@ -1,14 +1,11 @@
-#frozen_string_literal: true
+# frozen_string_literal: true
 
 class MoviesController < ApplicationController
   before_action :authenticate_user!
 
   def index
     @movies = Movie.all
-    respond_to do |format|
-      format.html
-      format.json { render json: @movies.to_json(methods: :average_score) }
-    end
+    render json: @movies.to_json(methods: :average_score), status: :ok
   end
 
   def new
@@ -18,9 +15,18 @@ class MoviesController < ApplicationController
   def create
     @movie = Movie.new(movie_params)
     if @movie.save
-      redirect_to movies_path, notice: 'Movie was successfully created.'
+      render json: { message: 'Movie was successfully created.', movie: @movie }, status: :created
     else
-      render :new
+      render json: { errors: @movie.errors.full_messages }, status: :unprocessable_entity
+    end
+  end
+
+  def update
+    @movie = Movie.find(params[:id])
+    if @movie.update(movie_params)
+      render json: { message: 'Movie was successfully updated.', movie: @movie }, status: :ok
+    else
+      render json: { errors: @movie.errors.full_messages }, status: :unprocessable_entity
     end
   end
 
