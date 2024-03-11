@@ -1,0 +1,15 @@
+version: '3'
+services:
+  web:
+    build: .
+    command: bundle exec rails s -p 3001 -b '0.0.0.0'
+    volumes:
+      - .:/rails
+    ports:
+      - "3001:3001"
+    env_file:
+      - ./.env
+    depends_on:
+      - redis
+  redis:
+    image: "redis:7.2-alpine"
